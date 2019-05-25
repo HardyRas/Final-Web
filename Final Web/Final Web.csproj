@@ -85,6 +85,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="WebApi">
+      <HintPath>..\..\..\New folder\WebApi\WebApi\bin\WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -376,6 +379,7 @@
     <Content Include="js\respond.min.js" />
     <Content Include="css\mainMap.css" />
     <Content Include="js\mainMap.js" />
+    <Content Include="MalariaPrePred.html" />
     <Content Include="Scripts\WebForms\DashboardJS.js" />
     <Content Include="Error_404.aspx" />
     <Content Include="Login.aspx" />
@@ -538,7 +542,9 @@
     <Compile Include="MalariaPrePred.aspx.designer.cs">
       <DependentUpon>MalariaPrePred.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Processor\NewFeatureManagerProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\NewFeatureManageRepository.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -553,6 +559,7 @@
     <Compile Include="trialTables.aspx.designer.cs">
       <DependentUpon>trialTables.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ValuesController1.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

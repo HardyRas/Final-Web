@@ -15,12 +15,6 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <%-- Page loader header files --%>
-<%--    <link href="importedCSS/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="importedCSS/node-waves/waves.css" rel="stylesheet" />
-    <link href="importedCSS/animate-css/animate.css" rel="stylesheet" />
-    <link href="importedCSS/customcss/style.css" rel="stylesheet">
-        <link href="css/themes/all-themes.css" rel="stylesheet" />--%>
 
 </head>
 
@@ -46,23 +40,6 @@
             </Scripts>
         </asp:ScriptManager>
 
-            <%-- Page loader --%>
-       <%-- <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>--%>
-    <%-- end of page loader--%>
             <div class="overlay"></div>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -73,7 +50,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Malaria PrePred</a>
+                    <a class="navbar-brand" runat="server" href="Default.aspx">Malaria PrePred</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

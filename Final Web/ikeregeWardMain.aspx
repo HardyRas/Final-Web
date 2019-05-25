@@ -170,7 +170,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="canvas-wrapper">
-                            <canvas class="main-chart" id="line-chart1" height="200" width="600"></canvas>
+                            <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
                         </div>
                     </div>
                 </div>
@@ -179,6 +179,7 @@
         </div><!--/.row-->
         <div class="row">
             <div class="col-md-12">
+                <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Prevalence vs Rainfall and Temperature
@@ -216,17 +217,66 @@
                     </div>
                     <div class="panel-body">
                         <div class="canvas-wrapper">
-                            <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+                            <canvas class="main-chart" id="line-chart1" height="200" width="600"></canvas>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-md-12">
+                <div class =" col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Prevalence vs AL6s
+                        <ul class="pull-right panel-settings panel-button-tab-right">
+                            <li class="dropdown">
+                                <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <em class="fa fa-cogs"></em>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <ul class="dropdown-settings">
+                                            <li>
+                                                <a href="#">
+                                                    <em class="fa fa-cog"></em> Settings 1
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#">
+                                                    <em class="fa fa-cog"></em> Settings 2
+                                                </a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#">
+                                                    <em class="fa fa-cog"></em> Settings 3
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="canvas-wrapper">
+                            <canvas class="main-chart" id="line-chart2" height="200" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class ="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Prevalence vs AL12s
                         <ul class="pull-right panel-settings panel-button-tab-right">
                             <li class="dropdown">
                                 <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
@@ -265,13 +315,15 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-md-12">
+                <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Prevalence vs AL12s
+                        Prevalence vs AL18s
                         <ul class="pull-right panel-settings panel-button-tab-right">
                             <li class="dropdown">
                                 <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
@@ -309,14 +361,16 @@
                             <canvas class="main-chart" id="line-chart4" height="200" width="600"></canvas>
                         </div>
                     </div>
+               </div> 
                 </div>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-md-12">
+                <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Prevalence vs AL18s
+                        Prevalence vs AL24s
                         <ul class="pull-right panel-settings panel-button-tab-right">
                             <li class="dropdown">
                                 <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
@@ -355,63 +409,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div><!--/.row-->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Prevalence vs AL24s
-                        <ul class="pull-right panel-settings panel-button-tab-right">
-                            <li class="dropdown">
-                                <a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <em class="fa fa-cogs"></em>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li>
-                                        <ul class="dropdown-settings">
-                                            <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Settings 1
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Settings 2
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Settings 3
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
-                    </div>
-                    <div class="panel-body">
-                        <div class="canvas-wrapper">
-                            <canvas class="main-chart" id="line-chart6" height="200" width="600"></canvas>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div><!--/.row-->
 
-        <div class="row">
-            <div class="col-md-6">
-                <!-- To return the chat feature -->
-                <!-- to return the to do list saved as returnThreeTodo  -->
-            </div><!--/.col-->
-            <!-- To return the timeline feature saved as returnFourTimeline -->
-            <!--/.col-->
-        </div><!--/.row-->
-    </div>	<!--/.main-->
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -424,8 +425,63 @@
 
     <script>
         window.onload = function () {
+            var chart = document.getElementById("line-chart1").getContext("2d");
+            window.myLine = new Chart(chart).Line(lineChartData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+        </script>
+        <script>
+        window.onload1 = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");
-            window.myLine = new Chart(chart1).Line(lineChartData, {
+            window.myLine1 = new Chart(chart1).Line(lineChartData1, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+        </script>
+    <script>
+        window.onload2 = function () {
+            var chart2 = document.getElementById("line-chart2").getContext("2d");
+            window.myLine2 = new Chart(chart2).Line(lineChartData2, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+        </script>
+    <script>
+        window.onload3 = function () {
+            var chart3 = document.getElementById("line-chart3").getContext("2d");
+            window.myLine3 = new Chart(chart3).Line(lineChartData3, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+        </script>
+        <script>
+        window.onload4 = function () {
+            var chart4 = document.getElementById("line-chart4").getContext("2d");
+            window.myLine4 = new Chart(chart4).Line(lineChartData4, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+        </script>
+        <script>
+        window.onload5 = function () {
+            var chart5 = document.getElementById("line-chart5").getContext("2d");
+            window.myLine5 = new Chart(chart5).Line(lineChartData5, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -433,5 +489,6 @@
             });
         };
     </script>
+        </div>
 </body>
 </html>
