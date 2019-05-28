@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IkeregeWardDataAccess", "Ik
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetambwegaWardDataAccess", "GetambwegaWardDataAccess\GetambwegaWardDataAccess.csproj", "{3EAEAAC0-9EC5-4A9C-ADCD-181D646010F1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "malariaPrevalencePrediction", "D:\123wa\VS Studio Projs\malariaPrevalencePrediction\malariaPrevalencePrediction\malariaPrevalencePrediction.csproj", "{9A7DD47F-8491-453E-8659-B36A30577F2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{3EAEAAC0-9EC5-4A9C-ADCD-181D646010F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EAEAAC0-9EC5-4A9C-ADCD-181D646010F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EAEAAC0-9EC5-4A9C-ADCD-181D646010F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7DD47F-8491-453E-8659-B36A30577F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7DD47F-8491-453E-8659-B36A30577F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7DD47F-8491-453E-8659-B36A30577F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7DD47F-8491-453E-8659-B36A30577F2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

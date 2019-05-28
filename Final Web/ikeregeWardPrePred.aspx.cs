@@ -13,5 +13,10 @@ namespace Final_Web
         {
 
         }
+
+        protected void PredictPrevalence_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

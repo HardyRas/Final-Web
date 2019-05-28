@@ -14,6 +14,7 @@ namespace IkeregeWardDataAccess
     
     public partial class IkeregeWard
     {
+        public System.DateTime months { get; set; }
         public Nullable<double> rainfall { get; set; }
         public Nullable<int> temperature { get; set; }
         public Nullable<int> al6 { get; set; }
@@ -21,6 +22,6 @@ namespace IkeregeWardDataAccess
         public Nullable<int> al18 { get; set; }
         public Nullable<int> al24 { get; set; }
         public string wardId { get; set; }
-        public System.DateTime months { get; set; }
+
     }
 }

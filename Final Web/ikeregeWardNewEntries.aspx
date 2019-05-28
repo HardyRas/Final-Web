@@ -37,7 +37,7 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
             $.ajax({   
 
                 type: "POST", 
-                url: "http://localhost:51217/api/NewFeatureEntry/AddNewFeature",    
+                url: "http://localhost:51217/api/NewFeatureEntry/",    
                 contentType: "application/json;charset=utf-8",
                 data: JSON.stringify(feature),   
                 dataType: "json",   

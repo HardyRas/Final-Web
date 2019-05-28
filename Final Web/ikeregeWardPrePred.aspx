@@ -69,8 +69,11 @@
                                 <div class="col-8">
                                     <div class="card-body">
 
-                                              <form>
-                                                <h6 class="heading-small text-muted mb-4">Prevalence Prediction</h6>
+                                              <form  id="PrePred" runat ="server">   
+                                                <h3 class="heading-small text-muted mb-4">Prevalence Prediction</h3>
+                                                  <hr class="my-4" />
+                                                <h6 class="heading-small text-muted mb-4">Enter relevant details and run prediction</h6>
+                                                                                                    <hr class="my-4" />
                                                 <div class="pl-lg-4">
                                                   <div class="row">
                                                     <div class="col-lg-6">
@@ -114,10 +117,11 @@
                                                       </div>
                                                     </div>
                                                   </div>
+                                                    <%-- Button sasa --%>
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                            <a href="#!" class="btn btn-sm btn-primary">Run Prediction</a>
+                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="predictPrevalence_Click"/>
                                                                     </div>    
                                                             </div>
                                                     </div>

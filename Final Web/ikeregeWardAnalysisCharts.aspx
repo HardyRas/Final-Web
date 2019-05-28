@@ -81,7 +81,7 @@
                 </div>
         </div><!--/.row-->
 
-        <div class="row">
+<%--        <div class="row">
             <div class="col-md-12">
             <div class="col-lg-12">
                 <h3>Anti-malarial Drugs dispensed</h3>
@@ -128,7 +128,7 @@
                 </div>
             </div>
                 </div>
-        </div><!--/.row-->
+        </div><!--/.row-->--%>
 
         <div class="row">
             <div class="col-md-12">
