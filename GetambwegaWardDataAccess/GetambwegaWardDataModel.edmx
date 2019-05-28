@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="malariaMigoriCountyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GetambwegaWard">
+          <Key>
+            <PropertyRef Name="months" />
+          </Key>
+          <Property Name="wardId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rainfall" Type="float" />
+          <Property Name="temperature" Type="float" />
+          <Property Name="al6" Type="int" />
+          <Property Name="al12" Type="int" />
+          <Property Name="al18" Type="int" />
+          <Property Name="al24" Type="int" />
+          <Property Name="months" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="malariaMigoriCountyModelStoreContainer">
+          <EntitySet Name="GetambwegaWard" EntityType="Self.GetambwegaWard" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="malariaMigoriCountyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GetambwegaWard">
+          <Key>
+            <PropertyRef Name="months" />
+          </Key>
+          <Property Name="wardId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rainfall" Type="Double" />
+          <Property Name="temperature" Type="Double" />
+          <Property Name="al6" Type="Int32" />
+          <Property Name="al12" Type="Int32" />
+          <Property Name="al18" Type="Int32" />
+          <Property Name="al24" Type="Int32" />
+          <Property Name="months" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="malariaMigoriCountyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GetambwegaWards" EntityType="Self.GetambwegaWard" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="malariaMigoriCountyModelStoreContainer" CdmEntityContainer="malariaMigoriCountyEntities">
+          <EntitySetMapping Name="GetambwegaWards">
+            <EntityTypeMapping TypeName="malariaMigoriCountyModel.GetambwegaWard">
+              <MappingFragment StoreEntitySet="GetambwegaWard">
+                <ScalarProperty Name="wardId" ColumnName="wardId" />
+                <ScalarProperty Name="rainfall" ColumnName="rainfall" />
+                <ScalarProperty Name="temperature" ColumnName="temperature" />
+                <ScalarProperty Name="al6" ColumnName="al6" />
+                <ScalarProperty Name="al12" ColumnName="al12" />
+                <ScalarProperty Name="al18" ColumnName="al18" />
+                <ScalarProperty Name="al24" ColumnName="al24" />
+                <ScalarProperty Name="months" ColumnName="months" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

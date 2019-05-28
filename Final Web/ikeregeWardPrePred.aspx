@@ -54,7 +54,7 @@
             <li ><a href="ikeregeWardFeatureForcast.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
             <li class="active"><a href="ikeregeWardPrePred.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
             <li><a href="ikeregeWardNewEntries.aspx"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
-            <li><a href="#"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
+            <li><a href="ikeregeWardAnalysisCharts.aspx"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
             <li><a href="Login.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!--/.sidebar-->
@@ -135,7 +135,6 @@
                                                   </div>
                                                </div>
                                               </form>
-
                                         </div>
                                     </div>
                                 </div>
