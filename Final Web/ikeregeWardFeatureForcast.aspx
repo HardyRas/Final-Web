@@ -13,61 +13,41 @@
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datepicker3.css" rel="stylesheet"/>
     <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/forMyModal.css" rel="stylesheet"/>
     <link href ="importedCSS/animate-css/animate.css" rel="stylesheet"/>
     <link href ="importedCSS/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
     
     <%-- MA SCRIPTS SASA --%>
-    <script src="/importedJS/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="/importedJS/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="/importedJS/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-    
-    <script type="text/javascript">
-            function redirect() {
-                    location.href = 'ikeregeWardNewEntries.aspx';
-            }
+    <script type="text/javascript" src="/importedJS/jquery-datatable/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="/importedJS/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <script type="text/javascript" src="/js/forMyModal.js"></script>
 
-    </script>
-
-    <script type="text/javascript">
-
-            $(document).ready(function () {
-
-                $.ajax({
-
-                    url: "http://localhost:51217/api/IkeregeWard",
-                    method: "post",
-                    dataType: "xml",
-                    success: function (data) {
-
-                        $("#DataTables_Table_1").dataTable({
-                            data: data,
-                            columns: [
-                                { 'data': 'months' },
-                                { 'data': 'rainfall' },
-                                { 'data': 'temperature' },
-                                { 'data': 'al6' },
-                                { 'data': 'al12' },
-                                { 'data': 'al18' },
-                                { 'data': 'al24' },
-                                { 'data': 'wardId' },
-                            ]
-                        });
-                    }
-                });
-            });
-    </script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 </head>
 
 <body style="height: 525px">
+
+
+                                            <%-- This is my modal shiii --%>
+                                                    <div id="myModal" class="modal">
+                                                        <div class="modal-content">
+                                                             <span class="close">&times;</span>
+                                                                    <p>Some Shit.</p>
+                                                        </div>
+                                                    </div>
+                                            <%-- End of my modal shii --%>
 
         <%-- Top navigation bar. --%>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -127,7 +107,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-lg-1">
                                                                                             <div class="col-4 text-right">
-                                                                                                <asp:Button Text ="Add Entry" runat="server"  id="Button" OnClientClick='redirect()'/>
+                                                                                                <asp:Button Text ="Add Entry" runat="server" UseSubmitBehavior="true" id="Button" OnClientClick="redirect()"/>
                                                                                             </div>    
                                                                                     </div>
                                                                                 </div>
@@ -135,7 +115,7 @@
                                                                             <div class="row">
                                                                                     <div class="col-lg-1">
                                                                                             <div class="col-4 text-right">
-                                                                                                <asp:Button Text ="Refresh DB" runat="server" id ="Button1"/>
+                                                                                                <asp:Button Text ="Update Table" runat="server" id ="Button1" OnClick="Button1_Click"/>
                                                                                             </div>
                                                                                     </div>
                                                                                 </div>
@@ -143,7 +123,7 @@
                                                                             <div class="row">
                                                                                     <div class="col-lg-1">
                                                                                             <div class="col-4 text-right">
-                                                                                                <asp:Button Text ="Get Service" runat="server" id ="Button2"/>
+                                                                                                <asp:Button Text ="Get Analysis Service" runat="server" id ="showPopUp"/>
                                                                                             </div>    
                                                                                     </div>
                                                                             </div>
@@ -151,7 +131,7 @@
                                                         <hr class="my-4" />
                                                         </form>
                                         <%-- This here resides the table --%>
-
+                                        <h3>FEATURES IN THE DATABASE</h3>
                                                                                      <div class="row">
                                                                                              <div class="col-lg-12">
                                                                                                  <div class="card">
@@ -203,6 +183,62 @@
                                                                                                      </div>
                                                                                                  </div>
                                                                                       </div>
+
+                                                                                                <hr class="my-4" />
+                                        <h3>FORCAST VALUES</h3>
+                                        <hr class="my-4" />
+
+                                                                                                                             <div class="row">
+                                                                                             <div class="col-lg-12">
+                                                                                                 <div class="card">
+                                                                                                 <div class="table-responsive">
+                                                                                                 <div class="dataTables_wrapper form-inline dt-bootstrap" id ="DataTables_Table_2_wrapper">
+
+                                                                                                 <div class="dt-buttons">
+                                                                                                     <a tabindex="0" class="dt-button buttons-copy buttons-html5" aria-controls="DataTables_Table_2" href="#">
+                                                                                                         <span>Copy</span></a>
+                                                                                                     <a tabindex="0" class="dt-button buttons-csv buttons-html5" aria-controls="DataTables_Table_2" href="#">
+                                                                                                             <span>CSV</span></a>
+                                                                                                     <a tabindex="0" class="dt-button buttons-excel buttons-html5" aria-controls="DataTables_Table_2" href="#">
+                                                                                                                 <span>Excel</span></a>
+                                                                                                     <a tabindex="0" class="dt-button buttons-pdf buttons-html5" aria-controls="DataTables_Table_2" href="#">
+                                                                                                                     <span>PDF</span></a>
+                                                                                                     <a tabindex="0" class="dt-button buttons-print" aria-controls="DataTables_Table_2" href="#">
+                                                                                                                         <span>Print</span></a>
+
+                                                                                                 </div>
+
+                                                                                                    <table class="table table-bordered table-striped table-hover dataTable js-exportable" id ="DataTables_Table_2" role="grid" aria-describedby="DataTables_Table_1_info">
+                                                                                                        <thead>
+                                                                                                            <tr>
+                                                                                                                <th>Months</th>
+                                                                                                                <th>Rainfall</th>
+                                                                                                                <th>Temperature</th>
+                                                                                                                <th>AL6</th>
+                                                                                                                <th>AL12</th>
+                                                                                                                <th>AL18</th>
+                                                                                                                <th>AL24</th>
+                                                                                                                <th>Ward Id</th>
+                                                                                                            </tr>
+                                                                                                        </thead>
+                                                                                                        <tfoot>
+                                                                                                        <tr>
+                                                                                                                <th>Months</th>
+                                                                                                                <th>Rainfall</th>
+                                                                                                                <th>Temperature</th>
+                                                                                                                <th>AL6</th>
+                                                                                                                <th>AL12</th>
+                                                                                                                <th>AL18</th>
+                                                                                                                <th>AL24</th>
+                                                                                                                <th>Ward Id</th>
+                                                                                                        </tr>
+                                                                                                </tfoot>
+                                                                                            </table>
+                                                                                                 </div>
+                                                                                                     </div>
+                                                                                                     </div>
+                                                                                                 </div>
+                                                                                      </div>
                                                                                 </div>
                                                                             </div>
                                                                     </div>
@@ -211,6 +247,52 @@
                                         </div>
                                     </div>
                                  </div>
+
+
+                                        <script type="text/javascript">
+
+                                            function redirect() {
+
+                                                javascript: window.open("http://localhost:51014/ikeregeWardNewEntries.aspx");
+                                                //location.href = "http://localhost:51014/ikeregeWardNewEntries.aspx";
+
+                                            }
+
+
+                                        </script>
+
+                                        <script type="text/javascript">
+
+                                            window.onload = function () {
+
+                                                $(document).ready(function () {
+
+                                                    $.ajax({
+
+                                                        url: "http://localhost:51217/api/IkeregeWard",
+                                                        method: "get",
+                                                        dataType: "xml",
+                                                        success: function (data) {
+
+                                                            $("#DataTables_Table_1").dataTable({
+                                                                data: data,
+                                                                columns: [
+                                                                    { 'data': 'months' },
+                                                                    { 'data': 'rainfall' },
+                                                                    { 'data': 'temperature' },
+                                                                    { 'data': 'al6' },
+                                                                    { 'data': 'al12' },
+                                                                    { 'data': 'al18' },
+                                                                    { 'data': 'al24' },
+                                                                    { 'data': 'wardId' },
+                                                                ]
+                                                            });
+                                                        }
+                                                    });
+                                                });
+                                            }
+
+                                        </script>
                             </div>
 
 </body>

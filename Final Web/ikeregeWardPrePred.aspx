@@ -70,9 +70,9 @@
                                     <div class="card-body">
 
                                               <form  id="PrePred" runat ="server">   
-                                                <h3 class="heading-small text-muted mb-4">Prevalence Prediction</h3>
+                                                <h3>PREVALENCE PREDICTION</h3>
                                                   <hr class="my-4" />
-                                                <h6 class="heading-small text-muted mb-4">Enter relevant details and run prediction</h6>
+                                                <h6>Enter respective details and run prediction</h6>
                                                                                                     <hr class="my-4" />
                                                 <div class="pl-lg-4">
                                                   <div class="row">
@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-email">Temoerature</label>
+                                                        <label class="form-control-label" for="input-email">Temperature</label>
                                                         <input type="email" id="input-email" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
@@ -121,7 +121,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="predictPrevalence_Click"/>
+                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="PredictPrevalence_Click"/>
                                                                     </div>    
                                                             </div>
                                                     </div>

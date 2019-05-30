@@ -24,21 +24,21 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
 
         function Addfeature() {
             var feature = {};
-            feature.Months = $("#inputMonths").val();
-            feature.Rainfall = $("#inputRain").val();
-            feature.Temperature = $("#inputTemp").val();
-            feature.Al6 = $("#inputAL6").val();
-            feature.Al12 = $("#inputAL12").val();
-            feature.Al18 = $("#inputAL18").val();
-            feature.Al24 = $("#inputAL24").val();
+            feature.months = $("#inputMonths").val();
+            feature.rainfall = $("#inputRain").val();
+            feature.temperature = $("#inputTemp").val();
+            feature.al6 = $("#inputAL6").val();
+            feature.al12 = $("#inputAL12").val();
+            feature.al18 = $("#inputAL18").val();
+            feature.al24 = $("#inputAL24").val();
             feature.WardId = $("#inputWardid").val();
    
    
             $.ajax({   
 
+                url: "http://localhost:51217/api/NewFeatureEntry/", 
                 type: "POST", 
-                url: "http://localhost:51217/api/NewFeatureEntry/",    
-                contentType: "application/json;charset=utf-8",
+                contentType: "application/xml;charset=utf-8",
                 data: JSON.stringify(feature),   
                 dataType: "json",   
                 success: function (response) {   
@@ -119,9 +119,10 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                     <div class="card-body">
 
                                               <form id="dataEntry" runat ="server">
-                                                <h3 class="heading-small text-muted mb-4">Data Entry</h3>
+                                                <h3>DATA ENTRY</h3>
                                                    <hr class="my-4" />
-                                                  <h6 class="heading-small text-muted mb-4">New Features</h6>
+                                                  <h6>New Features</h6>
+                                                                                                     <hr class="my-4" />
                                                 <div class="pl-lg-4">
 
                                                  <div class="row">

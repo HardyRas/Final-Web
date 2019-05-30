@@ -1,7 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MalariaPrePred.aspx.cs" Inherits="Final_Web.MalariaPrePred" %>
+﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="Final_Web.Contact" %>
 
-
-    <%-- What will exist in the container of the html body --%>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <%-- necessary header files --%>
@@ -16,7 +14,7 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="kenyaMap"
-<%--   viewBox="33.909821 5.033421 41.906896 -4.679658"--%>
+   viewBox="33.909821 5.033421 41.906896 -4.679658"
    width="457.63434"
    height="580.54065"
    enable-background="33.909821 5.033421 41.906896 -4.679658"
@@ -202,5 +200,4 @@
    </g>
 </svg>
     <%-- END OF SVG MAP OF KE --%>
- 
 </asp:Content>

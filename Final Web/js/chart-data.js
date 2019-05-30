@@ -1,3 +1,9 @@
+//$(document).ready(function () {
+//    $.ajax({
+//        url: "http://localhost:51217/api/IkeregeWard",
+//        type: "Get",
+//        success: function (data) { 
+
 var lineChartData =
 {
     labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -10,7 +16,7 @@ var lineChartData =
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
 				pointHighlightStroke : "rgba(220,220,220,1)",
-				data : [1, 23, 34, 10, 6, 76,785]
+                data: [1, 78,5, 1, 23, 34, 10, 6, 76, 785]
 			},
 			{
 				label: "My Second dataset",
@@ -20,7 +26,7 @@ var lineChartData =
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
 				pointHighlightStroke : "rgba(48, 164, 255, 1)",
-				data : [343,234,76,89,96,100,71]
+                data: [34, 96, 100, 71,1, 23, 34, 10, 6, 76, 785]
 			}
 		]
 
@@ -38,7 +44,7 @@ var lineChartData1 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [1, 23, 34, 10, 6, 76, 785]
+            data: [1, 23, 34, 10, 6, 76, 785, 1, 23, 34, 10, 6, 76, 785]
         },
         {
             label: "My Second dataset 1",
@@ -48,7 +54,7 @@ var lineChartData1 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(48, 164, 255, 1)",
-            data: [343, 234, 76, 89, 96, 100, 71]
+            data: [343, 234, 76, 89, 96, 100, 71, 1, 23, 34, 10, 6, 76, 785]
         }
     ]
 
@@ -66,7 +72,7 @@ var lineChartData2 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [1, 23, 34, 10, 6, 76, 785]
+            data: [1, 23, 34, 10, 6, 76, 785, 1, 23, 34, 10, 6, 76, 785]
         },
         {
             label: "My Second dataset 2",
@@ -76,7 +82,7 @@ var lineChartData2 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(48, 164, 255, 1)",
-            data: [343, 234, 76, 89, 96, 100, 71]
+            data: [343, 234, 76, 89, 96, 100, 71, 1, 23, 34, 10, 6, 76, 785]
         }
     ]
 
@@ -94,7 +100,7 @@ var lineChartData3 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [1, 23, 34, 10, 6, 76, 785]
+            data: [1, 23, 34, 10, 6, 76, 785, 1, 23, 34, 10, 6, 76, 785]
         },
         {
             label: "My Second dataset 3",
@@ -104,7 +110,7 @@ var lineChartData3 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(48, 164, 255, 1)",
-            data: [343, 234, 76, 89, 96, 100, 71]
+            data: [343, 234, 76, 89, 96, 100, 71, 1, 23, 34, 10, 6, 76, 785]
         }
     ]
 
@@ -122,7 +128,7 @@ var lineChartData4 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [1, 23, 34, 10, 6, 76, 785]
+            data: [1, 23, 34, 10, 6, 76, 785, 1, 23, 34, 10, 6, 76, 785]
         },
         {
             label: "My Second dataset 4",
@@ -132,7 +138,7 @@ var lineChartData4 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(48, 164, 255, 1)",
-            data: [343, 234, 76, 89, 96, 100, 71]
+            data: [343, 234, 76, 89, 96, 100, 71, 1, 23, 34, 10, 6, 76, 785]
         }
     ]
 
@@ -150,7 +156,7 @@ var lineChartData5 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [1, 23, 34, 10, 6, 76, 785]
+            data: [1, 23, 34, 10, 6, 76, 785, 1, 23, 34, 10, 6, 76, 785]
         },
         {
             label: "My Second dataset 5",
@@ -160,7 +166,7 @@ var lineChartData5 =
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(48, 164, 255, 1)",
-            data: [343, 234, 76, 89, 96, 100, 71]
+            data: [343, 234, 76, 89, 96, 100, 71, 1, 23, 34, 10, 6, 76, 785]
         }
     ]
 

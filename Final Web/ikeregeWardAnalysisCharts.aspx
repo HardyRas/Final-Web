@@ -81,55 +81,6 @@
                 </div>
         </div><!--/.row-->
 
-<%--        <div class="row">
-            <div class="col-md-12">
-            <div class="col-lg-12">
-                <h3>Anti-malarial Drugs dispensed</h3>
-            </div>
-                
-                </div>
-        </div><!--/.row-->
-
-    
-        <div class="row">
-            <div class="col-md-12">
-
-            <div class="col-xs-6 col-md-3">
-
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>AL6s</h4>
-                        <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>AL12s</h4>
-                        <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span class="percent">65%</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>AL18s</h4>
-                        <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body easypiechart-panel">
-                        <h4>AL24s</h4>
-                        <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span></div>
-                    </div>
-                </div>
-            </div>
-                </div>
-        </div><!--/.row-->--%>
-
         <div class="row">
             <div class="col-md-12">
                 <div class="col-lg-12">
@@ -425,63 +376,45 @@
 
     <script>
         window.onload = function () {
-            var chart = document.getElementById("line-chart1").getContext("2d");
+            var chart = document.getElementById("line-chart").getContext("2d");
             window.myLine = new Chart(chart).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
-        };
-        </script>
-        <script>
-        window.onload1 = function () {
-            var chart1 = document.getElementById("line-chart").getContext("2d");
-            window.myLine1 = new Chart(chart1).Line(lineChartData1, {
+            var chart1 = document.getElementById("line-chart1").getContext("2d");
+            window.myLine = new Chart(chart1).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
-        };
-        </script>
-    <script>
-        window.onload2 = function () {
             var chart2 = document.getElementById("line-chart2").getContext("2d");
-            window.myLine2 = new Chart(chart2).Line(lineChartData2, {
+            window.myLine = new Chart(chart2).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
-        };
-        </script>
-    <script>
-        window.onload3 = function () {
             var chart3 = document.getElementById("line-chart3").getContext("2d");
-            window.myLine3 = new Chart(chart3).Line(lineChartData3, {
+            window.myLine = new Chart(chart3).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
-        };
-        </script>
-        <script>
-        window.onload4 = function () {
+
             var chart4 = document.getElementById("line-chart4").getContext("2d");
-            window.myLine4 = new Chart(chart4).Line(lineChartData4, {
+            window.myLine = new Chart(chart4).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
-        };
-        </script>
-        <script>
-        window.onload5 = function () {
+
             var chart5 = document.getElementById("line-chart5").getContext("2d");
-            window.myLine5 = new Chart(chart5).Line(lineChartData5, {
+            window.myLine = new Chart(chart5).Line(lineChartData, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",

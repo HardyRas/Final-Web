@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Final_Web
 {
-    public partial class MalariaPrePred : System.Web.UI.Page
+    public partial class MalariaPrePred : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
