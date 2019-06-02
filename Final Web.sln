@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final Web", "Final Web\Final Web.csproj", "{2FDEE23F-0170-4649-9E29-7D29CD8FAAEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9156FAFA-132B-49AA-B1CD-178B384B4E1D}"
+	ProjectSection(SolutionItems) = preProject
+		MalariaPrePred.html = MalariaPrePred.html
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "..\..\New folder\WebApi\WebApi\WebApi.csproj", "{7B9EEE33-7494-4E11-A0D3-9DC17A5B2497}"
 EndProject
