@@ -1,10 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SVG.aspx.cs" Inherits="Final_Web.SVG" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="selectionMap.aspx.cs" Inherits="Final_Web.SVG" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Ikerege Ward</title>
+
+    <%-- Ma CSS --%>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/datepicker3.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
 </head>
 <body>
 
@@ -40,7 +50,7 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="SVG.aspx"><em class="fa fa-dashboard">&nbsp;</em> County Selection</a></li>
+            <li class="active"><a href="selectionMap.aspx"><em class="fa fa-dashboard">&nbsp;</em> County Selection</a></li>
             <li><a href="Login.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!--/.sidebar-->

@@ -28,7 +28,7 @@ namespace Final_Web
             if (dt.Rows.Count > 0)
             {
                 Session["username"] = userid;
-                Response.Redirect("SVG.aspx");
+                Response.Redirect("selectionMap.aspx");
             }
             else
             {

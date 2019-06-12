@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.ML;
-using Microsoft.ML.Core.Data;
-using Microsoft.ML.Data;
-using System.IO;
-using WebApi.DataModels;
+using Microsoft.Extensions.ML;
+using API.DataModels;
 
 namespace API
 {
@@ -28,28 +25,8 @@ namespace API
             //..which creates an ObjectPool of PredictionEngine objects for application use
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-    //        services.AddPredictionEnginePool<Malaria, MalariaPrevalencePrediction>()
-    //.FromFile("MLModels/sentiment_model.zip");
-            //The recommended way to share the ITransfomer object across
-            //Http requests is to register it as singleton lifetime object 
-            //..in an IoC container for Dependency Injection usage
-            services.AddSingleton<MLContext>();
-
-            //ML Model (ITransformed) created as singleton for the whole API. 
-            //..Loads from .zip file here.
-            //..It is thread safe
-            services.AddSingleton<ITransformer,
-                                    TransformerChain<ITransformer>>((ctx) =>
-                                    {
-                                        MLContext mlContext = ctx.GetRequiredService<MLContext>();
-                                        string modelFilePathName = Configuration["Model:H:/Web/Final Web/Final Web"];
-
-                                        ITransformer mlModel;
-                                        using (var fileStream = File.OpenRead(modelFilePathName))
-                                                   mlModel = mlContext.Model.Load(fileStream);
-
-                                        return (TransformerChain<ITransformer>)mlModel;
-                                    });
+            services.AddPredictionEnginePool<PrevalenceData, MalariaPrevalencePrediction>()
+                .FromFile("MLModel/Model.zip");
         }
 
         //This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

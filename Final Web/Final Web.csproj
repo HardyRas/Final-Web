@@ -622,7 +622,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="SVG.aspx" />
+    <Content Include="selectionMap.aspx" />
     <Content Include="SVG\kenya.svg" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -723,12 +723,12 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="SVG.aspx.cs">
-      <DependentUpon>SVG.aspx</DependentUpon>
+    <Compile Include="selectionMap.aspx.cs">
+      <DependentUpon>selectionMap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SVG.aspx.designer.cs">
-      <DependentUpon>SVG.aspx</DependentUpon>
+    <Compile Include="selectionMap.aspx.designer.cs">
+      <DependentUpon>selectionMap.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
