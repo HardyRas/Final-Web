@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+//using System.IO;
+//using System.Linq;
+//using malariaPrevalencePrediction;
+//using Microsoft.ML;
+//using Microsoft.ML.Data;
+//using Microsoft.Data.DataView;
+//using IDataView = Microsoft.Data.DataView.IDataView;
 
 namespace Final_Web
 {
     public partial class ikeregeWardPrePred : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void PredictPrevalence_Click(object sender, EventArgs e)
         {
 
         }

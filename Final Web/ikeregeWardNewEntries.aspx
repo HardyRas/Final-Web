@@ -19,49 +19,9 @@ Now we need to call the Web API controller method from the .aspx page.
 To do this we need to create a JSON method using jQuery as in the following,--%>
 
     <script src="js/jquery-1.7.1.js" type="text/javascript"></script>   
-       
-    <script type="text/javascript">
-
-        function Addfeature() {
-            var feature = {};
-            feature.months = $("#inputMonths").val();
-            feature.rainfall = $("#inputRain").val();
-            feature.temperature = $("#inputTemp").val();
-            feature.al6 = $("#inputAL6").val();
-            feature.al12 = $("#inputAL12").val();
-            feature.al18 = $("#inputAL18").val();
-            feature.al24 = $("#inputAL24").val();
-            feature.WardId = $("#inputWardid").val();
-   
-   
-            $.ajax({   
-
-                url: "http://localhost:51217/api/NewFeatureEntry/", 
-                type: "POST", 
-                contentType: "application/xml;charset=utf-8",
-                data: JSON.stringify(feature),   
-                dataType: "json",   
-                success: function (response) {   
-                    alert(response);           
-                },   
-
-                error: function (xhr, status, error) {
-                    var errorMessage = xhr.status + ':' + xhr.statusText
-                    alert('Error - ' + ' ' + errorMessage);
-   
-                }   
-            });   
-        }        
-   
-        $(document).ready(function ()   
-         {   
-            $("#btnSave").click(function (e) {               
-
-                Addfeature();   
-                e.preventDefault();  
-            });    
-        });   
-    </script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    <script src="js/PostToDB.js" type="text/javascript"></script>   
     
 </head>
 <body style="height: 525px">
@@ -129,55 +89,55 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>Month</label>
-                                                        <input type="date" id="inputMonths"class="form-control form-control-alternative"/>
+                                                        <input type="date" id="inputMonths" value="months" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                 <div class="col-lg-6">
                                                         <div class="form-group">
-                                                           <label>Ward ID</label>
-                                                            <input type="text" id="inputWardid" class="form-control form-control-alternative"/>
+                                                           <label>Rainfall</label>
+                                                            <input type="number" id="inputRain" value="rainfall" class="form-control form-control-alternative"/>
                                                         </div>
                                                     </div>
                                                  </div>
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>Rainfall</label>
-                                                        <input type="number" id="inputRain" class="form-control form-control-alternative"/>
+                                                        <label>Temperature</label>
+                                                        <input type="number" id="inputTemperature" value="temperature" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>Temperature</label>
-                                                        <input type="number" id="inputTemp" class="form-control form-control-alternative"/>
+                                                        <label>AL6s</label>
+                                                        <input type="number" id="inputAL6" value="al6" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label">AL6s</label>
-                                                        <input type="number" id="inputAL6" class="form-control form-control-alternative"/>
+                                                        <label">AL12s</label>
+                                                        <input type="number" id="inputAL12" value="al12" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL12s</label>
-                                                        <input type="number" id="inputAL12" class="form-control form-control-alternative"/>
+                                                        <label>AL18s</label>
+                                                        <input type="number" id="inputAL18" value="al18" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                      <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL18s</label>
-                                                        <input type="number" id="inputAL18"class="form-control form-control-alternative"/>
+                                                        <label>AL24s</label>
+                                                        <input type="number" id="inputAL24" value="al24" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL24s</label>
-                                                        <input type="number" id="inputAL24" class="form-control form-control-alternative"/>
+                                                        <label>Ward Id</label>
+                                                        <input type="text" id="inputWardId" value="wardid" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>

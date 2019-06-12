@@ -121,7 +121,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="PredictPrevalence_Click"/>
+                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence"/>
                                                                     </div>    
                                                             </div>
                                                     </div>

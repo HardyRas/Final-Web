@@ -1,22 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="trialTables.aspx.cs" Inherits="Final_Web.TrialTables" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SVG.aspx.cs" Inherits="Final_Web.SVG" %>
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Ikerege Ward</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/datepicker3.css" rel="stylesheet"/>
-    <link href="css/styles.css" rel="stylesheet"/>
-
-    <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+    <title></title>
 </head>
-<body style="height: 525px">
-
-        <form id="form1" runat="server">
+<body>
 
         <%-- Top navigation bar. --%>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -44,21 +34,17 @@
             <div class="clear"></div>
         </div>
         <div class="divider"></div>
+        <form role="search">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search"/>
             </div>
+        </form>
         <ul class="nav menu">
-            <li><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Prevalence Report</a></li>
-            <li ><a href="#"><em class="fa fa-calendar">&nbsp;</em> Commodities Report</a></li>
-            <li ><a href="#"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
-            <li class="active"><a href="trialTables.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
-            <li><a href="#"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
-            <li><a href="#"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
+            <li class="active"><a href="SVG.aspx"><em class="fa fa-dashboard">&nbsp;</em> County Selection</a></li>
             <li><a href="Login.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!--/.sidebar-->
 
-        </form>
 
 </body>
 </html>
