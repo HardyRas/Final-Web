@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.props" Condition="Exists('..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.props')" />
-  <Import Project="..\packages\Microsoft.ML.CpuMath.0.10.0\build\netstandard2.0\Microsoft.ML.CpuMath.props" Condition="Exists('..\packages\Microsoft.ML.CpuMath.0.10.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" />
+  <Import Project="..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.props" Condition="Exists('..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.props')" />
+  <Import Project="..\packages\Microsoft.ML.FastTree.1.4.0-preview\build\netstandard2.0\Microsoft.ML.FastTree.props" Condition="Exists('..\packages\Microsoft.ML.FastTree.1.4.0-preview\build\netstandard2.0\Microsoft.ML.FastTree.props')" />
+  <Import Project="..\packages\Microsoft.ML.Mkl.Redist.1.4.0-preview\build\netstandard2.0\Microsoft.ML.Mkl.Redist.props" Condition="Exists('..\packages\Microsoft.ML.Mkl.Redist.1.4.0-preview\build\netstandard2.0\Microsoft.ML.Mkl.Redist.props')" />
+  <Import Project="..\packages\Microsoft.ML.CpuMath.1.4.0-preview\build\netstandard2.0\Microsoft.ML.CpuMath.props" Condition="Exists('..\packages\Microsoft.ML.CpuMath.1.4.0-preview\build\netstandard2.0\Microsoft.ML.CpuMath.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -27,7 +29,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +41,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>preview</LangVersion>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
+    <PublishDatabases>false</PublishDatabases>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,11 +69,17 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Accessibility.dll</HintPath>
+    </Reference>
     <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.3.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
     </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMarshalers">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\CustomMarshalers.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -65,103 +90,156 @@
     <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
     </Reference>
+    <Reference Include="ISymWrapper">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\ISymWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities.Build">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Activities.Build.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion.v4.0">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Conversion.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Tasks.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Utilities.v4.0">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Utilities.v4.0.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.DataView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.DataView.0.11.0\lib\netstandard2.0\Microsoft.Data.DataView.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Core.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.CpuMath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.CpuMath.0.10.0\lib\netstandard2.0\Microsoft.ML.CpuMath.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.CpuMath.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.CpuMath.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Data.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.DataView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.DataView.1.0.0\lib\netstandard2.0\Microsoft.ML.DataView.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ML.Ensemble, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Ensemble.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.DataView.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.DataView.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.FastTree, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.FastTree.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.FastTree.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.FastTree.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.KMeansClustering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ML.Maml, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Maml.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.PCA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.PCA.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.PCA.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ML.ResultProcessor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.ResultProcessor.dll</HintPath>
+    <Reference Include="Microsoft.ML.StandardTrainers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.StandardTrainers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ML.SamplesUtils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.SamplesUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ML.StandardLearners, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.StandardLearners.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ML.Sweeper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Sweeper.dll</HintPath>
+    <Reference Include="Microsoft.ML.TimeSeries, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.TimeSeries.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.TimeSeries.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ML.Transforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ML.0.10.0\lib\netstandard2.0\Microsoft.ML.Transforms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ML.1.4.0-preview\lib\netstandard2.0\Microsoft.ML.Transforms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.CodeDom, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.CodeDom.4.4.0\lib\net461\System.CodeDom.dll</HintPath>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Numerics" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.8.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DataVisualization" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -179,9 +257,6 @@
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="WebApi">
-      <HintPath>..\..\..\New folder\WebApi\WebApi\bin\WebApi.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -766,7 +841,150 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Accessibility.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\CustomMarshalers.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\ISymWrapper.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Activities.Build.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Conversion.v4.0.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Engine.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Framework.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Tasks.v4.0.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.Build.Utilities.v4.0.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.JScript.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.VisualBasic.Compatibility.Data.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.VisualBasic.Compatibility.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.VisualBasic.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.VisualC.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.VisualC.STLCLR.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationBuildTasks.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Aero.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Aero2.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.AeroLite.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Classic.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Luna.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Royale.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\ReachFramework.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\sysglobl.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Activities.Core.Presentation.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Activities.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Activities.DurableInstancing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Activities.Presentation.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.AddIn.Contract.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.AddIn.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.Composition.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.Composition.Registration.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.Install.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Entity.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Entity.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Linq.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.OracleClient.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Services.Client.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Services.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Services.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.SqlXml.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Deployment.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Device.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Diagnostics.Tracing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.DirectoryServices.AccountManagement.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.DirectoryServices.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.DirectoryServices.Protocols.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Dynamic.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.Thunk.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.Wrapper.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IdentityModel.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IdentityModel.Selectors.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IdentityModel.Services.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IO.Compression.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IO.Compression.FileSystem.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.IO.Log.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Management.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Management.Instrumentation.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Messaging.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.WebRequest.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Numerics.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Printing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Reflection.Context.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Caching.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.DurableInstancing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Remoting.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Security.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Activation.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Activities.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Channels.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Discovery.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Routing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceModel.Web.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceProcess.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Speech.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Transactions.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Abstractions.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.ApplicationServices.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DataVisualization.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DataVisualization.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DynamicData.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DynamicData.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Entity.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Entity.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Mobile.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.RegularExpressions.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Routing.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Services.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Controls.Ribbon.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.DataVisualization.Design.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.DataVisualization.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Input.Manipulations.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Presentation.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Workflow.Activities.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Workflow.ComponentModel.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Workflow.Runtime.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.WorkflowServices.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xaml.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Serialization.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\UIAutomationClient.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\UIAutomationClientsideProviders.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\UIAutomationProvider.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\UIAutomationTypes.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsFormsIntegration.dll" />
+    <Analyzer Include="C:\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\XamlBuildTask.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\New folder\WebApi\WebApi\WebApi.csproj">
+      <Project>{7b9eee33-7494-4e11-a0d3-9dc17a5b2497}</Project>
+      <Name>WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -798,11 +1016,13 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.CpuMath.0.10.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.CpuMath.0.10.0\build\netstandard2.0\Microsoft.ML.CpuMath.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.CpuMath.1.4.0-preview\build\netstandard2.0\Microsoft.ML.CpuMath.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.CpuMath.1.4.0-preview\build\netstandard2.0\Microsoft.ML.CpuMath.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.Mkl.Redist.1.4.0-preview\build\netstandard2.0\Microsoft.ML.Mkl.Redist.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.Mkl.Redist.1.4.0-preview\build\netstandard2.0\Microsoft.ML.Mkl.Redist.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.FastTree.1.4.0-preview\build\netstandard2.0\Microsoft.ML.FastTree.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.FastTree.1.4.0-preview\build\netstandard2.0\Microsoft.ML.FastTree.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.targets'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.0.10.0\build\netstandard2.0\Microsoft.ML.targets')" />
+  <Import Project="..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.1.4.0-preview\build\netstandard2.0\Microsoft.ML.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

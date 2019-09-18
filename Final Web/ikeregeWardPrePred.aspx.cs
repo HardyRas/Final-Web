@@ -1,5 +1,5 @@
 ﻿using System;
-//using System.IO;
+using System.IO;
 //using System.Linq;
 //using malariaPrevalencePrediction;
 //using Microsoft.ML;
@@ -14,6 +14,13 @@ namespace Final_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void PredictPrevalence_Click(object sender, EventArgs e)
+        {
+            
+
 
         }
     }

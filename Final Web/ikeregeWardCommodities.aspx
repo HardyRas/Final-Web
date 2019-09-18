@@ -156,7 +156,7 @@
         window.onload = function () {
 
             var chart = document.getElementById("line-chart").getContext("2d");
-            window.myLine = new Chart(chart).Line(lineChartData, {
+            window.myLine = new Chart(chart).Line(lineChartDataAL6, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -164,21 +164,21 @@
             });
 
             var chart1 = document.getElementById("line-chart1").getContext("2d");
-            window.myLine = new Chart(chart1).Line(lineChartData, {
+            window.myLine = new Chart(chart1).Line(lineChartDataAL12, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
             var chart2 = document.getElementById("line-chart2").getContext("2d");
-            window.myLine = new Chart(chart2).Line(lineChartData, {
+            window.myLine = new Chart(chart2).Line(lineChartDataAL18, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
             var chart3 = document.getElementById("line-chart3").getContext("2d");
-            window.myLine = new Chart(chart3).Line(lineChartData, {
+            window.myLine = new Chart(chart3).Line(lineChartDataAL24, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",

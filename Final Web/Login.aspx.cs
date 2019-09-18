@@ -22,13 +22,14 @@ namespace Final_Web
             string userid = TextBox2.Text;
             _ = TextBox3.Text;
             SqlCommand cmd = new SqlCommand("select username , password from SystemLogin where username ='" + TextBox2.Text + "'and password = '" + TextBox3.Text + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            SqlDataAdapter da = sqlDataAdapter;
             DataTable dt = new DataTable();
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
                 Session["username"] = userid;
-                Response.Redirect("selectionMap.aspx");
+                Response.Redirect("ikeregeWardMain.aspx");
             }
             else
             {

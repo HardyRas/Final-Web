@@ -12,7 +12,7 @@
     <title>Ikerege Ward</title>
     
     <%-- MA CSS --%>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/> 
     <link href="css/styles.css" rel="stylesheet"/>
 <%--    <link href ="importedCSS/animate-css/animate.css" rel="stylesheet"/>--%>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>

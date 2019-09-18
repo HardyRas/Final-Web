@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ikeregeWardPrePred.aspx.cs" Inherits="Final_Web.ikeregeWardPrePred" %>
+﻿<%@Page Language="C#" AutoEventWireup="true" CodeBehind="ikeregeWardPrePred.aspx.cs" Inherits="Final_Web.ikeregeWardPrePred" %>
 
 <!DOCTYPE html>
 
@@ -69,7 +69,7 @@
                                 <div class="col-8">
                                     <div class="card-body">
 
-                                              <form  id="PrePred" runat ="server">   
+                                              <form  id="PrePred" runat ="server" method="post" action="http://localhost:51218/api/Predict/Post">   
                                                 <h3>PREVALENCE PREDICTION</h3>
                                                   <hr class="my-4" />
                                                 <h6>Enter respective details and run prediction</h6>
@@ -78,42 +78,42 @@
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-username">Rainfall</label>
-                                                        <input type="text" id="input-username" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >Rainfall</label>
+                                                        <input type="text" id="rainfall" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-email">Temperature</label>
-                                                        <input type="email" id="input-email" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >Temperature</label>
+                                                        <input type="email" id="temperature"  runat="server" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-first-name">AL6s</label>
-                                                        <input type="text" id="input-first-name1" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL6s</label>
+                                                        <input type="text" id="al6" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-last-name">AL12s</label>
-                                                        <input type="text" id="input-last-name2" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL12s</label>
+                                                        <input type="text" id="al12" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                      <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-first-name">AL18s</label>
-                                                        <input type="text" id="input-first-name" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL18s</label>
+                                                        <input type="text" id="al18" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label class="form-control-label" for="input-last-name">AL24s</label>
-                                                        <input type="text" id="input-last-name3" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL24s</label>
+                                                        <input type="text" id="al24" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -121,7 +121,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence"/>
+                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="PredictPrevalence_Click"/>
                                                                     </div>    
                                                             </div>
                                                     </div>

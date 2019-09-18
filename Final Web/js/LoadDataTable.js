@@ -7,7 +7,7 @@
             "ajax":
             {
 
-                "url": "http://localhost:51217/IkeregeWard/GetList",
+                "url": "http://localhost:51217/api/IkeregeWard/Get",
                 "type": "GET",
                 "dataType": "json"
 
@@ -31,11 +31,12 @@
             "ajax":
             {
 
-                "url": "http://localhost:51217/IkeregeWard/GetList",
+                "url": "http://localhost:51217/api/IkeregeWard/Get",
                 "type": "GET",
                 "dataType": "json"
 
             },
+
             "columns":
                 [
                     { "data": "Months" },

@@ -1,8 +1,8 @@
 ﻿using Microsoft.ML.Data;
 
-namespace API.DataModels
+namespace WebApi.DataModels
 {
-    public class PrevalenceData
+    public class Malaria
     {
 
         [LoadColumn(0)]
@@ -28,7 +28,7 @@ namespace API.DataModels
 
         [LoadColumn(7)]
         [ColumnName("Label")]
-        public float prevalenceUne;
+        public int prevalenceUne;
 
     }
 }

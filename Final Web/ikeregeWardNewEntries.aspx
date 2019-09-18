@@ -18,10 +18,11 @@
 Now we need to call the Web API controller method from the .aspx page.
 To do this we need to create a JSON method using jQuery as in the following,--%>
 
+    <script src="js/PostToDB.js" type="text/javascript"></script>
     <script src="js/jquery-1.7.1.js" type="text/javascript"></script>   
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-    <script src="js/PostToDB.js" type="text/javascript"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
     
 </head>
 <body style="height: 525px">
@@ -78,6 +79,7 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                 <div class="col-8">
                                     <div class="card-body">
 
+                                        <%-- I will use the name of this form --%>
                                               <form id="dataEntry" runat ="server">
                                                 <h3>DATA ENTRY</h3>
                                                    <hr class="my-4" />
@@ -89,13 +91,13 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>Month</label>
-                                                        <input type="date" id="inputMonths" value="months" class="form-control form-control-alternative"/>
+                                                        <input type="date" id="inputMonths"  class="form-control form-control-alternative" />
                                                       </div>
                                                     </div>
                                                 <div class="col-lg-6">
                                                         <div class="form-group">
                                                            <label>Rainfall</label>
-                                                            <input type="number" id="inputRain" value="rainfall" class="form-control form-control-alternative"/>
+                                                            <input type="number" id="inputRain"  class="form-control form-control-alternative"/>
                                                         </div>
                                                     </div>
                                                  </div>
@@ -103,13 +105,13 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>Temperature</label>
-                                                        <input type="number" id="inputTemperature" value="temperature" class="form-control form-control-alternative"/>
+                                                        <input type="number" id="inputTemperature"  class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>AL6s</label>
-                                                        <input type="number" id="inputAL6" value="al6" class="form-control form-control-alternative"/>
+                                                        <input type="number" id="inputAL6" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -117,13 +119,13 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label">AL12s</label>
-                                                        <input type="number" id="inputAL12" value="al12" class="form-control form-control-alternative"/>
+                                                        <input type="number" id="inputAL12" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>AL18s</label>
-                                                        <input type="number" id="inputAL18" value="al18" class="form-control form-control-alternative"/>
+                                                        <input type="number" id="inputAL18"  class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -131,30 +133,30 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>AL24s</label>
-                                                        <input type="number" id="inputAL24" value="al24" class="form-control form-control-alternative"/>
+                                                        <input type="number" id="inputAL24"  class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
                                                         <label>Ward Id</label>
-                                                        <input type="text" id="inputWardId" value="wardid" class="form-control form-control-alternative"/>
+                                                        <input type="text" id="inputWardId" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
 
-                                                    <%-- Button sasa --%>
+                                                </div>
+                                                <hr class="my-4" />
+                                              </form>
+                                                
+                                                   <%-- Button sasa --%>
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                        <asp:Button Text ="Add Entry" runat="server" id ="btnSave"/>
+                                                                        <button id ="btnSave" onclick="btnSave_Click()">Add</button>
                                                                     </div>    
                                                             </div>
                                                     </div>
                                                     <%-- End of button --%>
-
-                                                </div>
-                                                <hr class="my-4" />
-                                              </form>
                                         </div>
                                     </div>
                                 </div>

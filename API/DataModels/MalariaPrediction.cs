@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace API.DataModels
+namespace WebApi.DataModels
 {
 
     //MalariaPrediction inherits from PrevalenceData.

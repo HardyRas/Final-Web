@@ -10,6 +10,6 @@
 namespace Final_Web {
     
     
-    public partial class SVG {
+    public partial class selectionMap {
     }
 }

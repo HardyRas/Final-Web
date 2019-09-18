@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using API.DataModels;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ML;
-using API.DataModels;
+using WebApi.DataModels;
 
-namespace API
+namespace WebApi
 {
     public class Startup
     {
@@ -25,7 +26,7 @@ namespace API
             //..which creates an ObjectPool of PredictionEngine objects for application use
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddPredictionEnginePool<PrevalenceData, MalariaPrevalencePrediction>()
+            services.AddPredictionEnginePool<Malaria, MalariaPrevalencePrediction>()
                 .FromFile("MLModel/Model.zip");
         }
 

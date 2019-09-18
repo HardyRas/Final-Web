@@ -96,21 +96,21 @@
                                     <li>
                                         <ul class="dropdown-settings">
                                             <li>
-                                                <a href="#">
+                                                <button onclick="loadPrevalvTGetambwega()">
                                                     <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
+                                                <button onclick="loadKakraoPreVt()">
                                                     <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside
-                                                </a>
+                                                <button onclick="loadGurarWarPreVt()">
+                                                    <em class="fa fa-cog"></em> Gurar Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -128,6 +128,8 @@
             </div>
                 </div>
         </div><!--/.row-->
+
+        <%-- RAINFALL TEMP --%>
         <div class="row">
             <div class="col-md-12">
                 <div class="col-lg-12">
@@ -142,22 +144,11 @@
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
                                         <ul class="dropdown-settings">
-                                            <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
-                                            </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside Migori
-                                                </a>
+                                                <button onclick="PrevRainTempGurar()">
+                                                    <em class="fa fa-cog"></em> Another Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -175,6 +166,8 @@
                 </div>
             </div>
         </div><!--/.row-->
+
+        <%-- PREV VS AL6 --%>
         <div class="row">
             <div class="col-md-12">
                 <div class =" col-lg-12">
@@ -190,21 +183,21 @@
                                     <li>
                                         <ul class="dropdown-settings">
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALsixGeta()">
                                                     <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALsixKakra()">
                                                     <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside Migori
-                                                </a>
+                                                <button onclick="PrevALsixGurar()">
+                                                    <em class="fa fa-cog"></em> Gurar Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -237,21 +230,21 @@
                                     <li>
                                         <ul class="dropdown-settings">
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALtwelGeta()">
                                                     <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALtwelKakra()">
                                                     <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside Migori
-                                                </a>
+                                                <button onclick="PrevALtwelGurar()">
+                                                    <em class="fa fa-cog"></em> Another Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -284,21 +277,21 @@
                                     <li>
                                         <ul class="dropdown-settings">
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALeighGeta()">
                                                     <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALeighKakra()">
                                                     <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside Migori
-                                                </a>
+                                                <button onclick="PrevALeighGurar()">
+                                                    <em class="fa fa-cog"></em> Another Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -331,21 +324,21 @@
                                     <li>
                                         <ul class="dropdown-settings">
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALtwenGeta()">
                                                     <em class="fa fa-cog"></em> Getambwega Ward
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
+                                                <button onclick="PrevALtwenKakra()">
                                                     <em class="fa fa-cog"></em> Another Ward in Migori
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#">
-                                                    <em class="fa fa-cog"></em> Another Ward outside Migori
-                                                </a>
+                                                <button onclick="PrevALtwenGurar()">
+                                                    <em class="fa fa-cog"></em> Another Ward
+                                                </button>
                                             </li>
                                         </ul>
                                     </li>
@@ -384,21 +377,21 @@
                 scaleFontColor: "#c5c7cc"
             });
             var chart1 = document.getElementById("line-chart1").getContext("2d");
-            window.myLine = new Chart(chart1).Line(lineChartData, {
+            window.myLine = new Chart(chart1).Line(lineChartData1, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
             var chart2 = document.getElementById("line-chart2").getContext("2d");
-            window.myLine = new Chart(chart2).Line(lineChartData, {
+            window.myLine = new Chart(chart2).Line(lineChartData2, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
                 scaleFontColor: "#c5c7cc"
             });
             var chart3 = document.getElementById("line-chart3").getContext("2d");
-            window.myLine = new Chart(chart3).Line(lineChartData, {
+            window.myLine = new Chart(chart3).Line(lineChartData3, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -406,7 +399,7 @@
             });
 
             var chart4 = document.getElementById("line-chart4").getContext("2d");
-            window.myLine = new Chart(chart4).Line(lineChartData, {
+            window.myLine = new Chart(chart4).Line(lineChartData4, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -414,7 +407,7 @@
             });
 
             var chart5 = document.getElementById("line-chart5").getContext("2d");
-            window.myLine = new Chart(chart5).Line(lineChartData, {
+            window.myLine = new Chart(chart5).Line(lineChartData5, {
                 responsive: true,
                 scaleLineColor: "rgba(0,0,0,.2)",
                 scaleGridLineColor: "rgba(0,0,0,.05)",
@@ -422,6 +415,65 @@
             });
         };
     </script>
+
+            <script>
+
+                //prevalence vs time functions
+                function loadPrevalvTGetambwega() {
+                    var chart = document.getElementById("line-chart").getContext("2d");
+                    window.myLine = new Chart(chart).Line(lineChartDataGetaPVT,
+                    {
+                        responsive: true,
+                        scaleLineColor: "rgba(0,0,0,.2)",
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        scaleFontColor: "#c5c7cc"
+                    });
+                }
+
+                function loadKakraoPreVt(){
+                    var chart1 = document.getElementById("line-chart").getContext("2d");
+                    window.myLine = new Chart(chart1).Line(lineChartDataKakraPVT, {
+                        responsive: true,
+                        scaleLineColor: "rgba(0,0,0,.2)",
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        scaleFontColor: "#c5c7cc"
+                    });
+                }
+
+                function loadGurarWarPreVt(){
+                    var chart12 = document.getElementById("line-chart").getContext("2d");
+                    window.myLine = new Chart(chart12).Line(lineChartDataGurarPVT, {
+                        responsive: true,
+                        scaleLineColor: "rgba(0,0,0,.2)",
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        scaleFontColor: "#c5c7cc"
+                    });
+                }
+
+
+                //prevalence vs rain and temp functions
+                function PrevRainTempGurar() {
+                    var chart5 = document.getElementById("line-chart1").getContext("2d");
+                    window.myLine = new Chart(chart5).Line(lineChartDataPvRTGurar, {
+                        responsive: true,
+                        scaleLineColor: "rgba(0,0,0,.2)",
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        scaleFontColor: "#c5c7cc"
+                    });
+                }
+
+                //load gurar prevalence vs al6 (ikerege)
+                function PrevALsixGurar() {
+                    var chart2 = document.getElementById("line-chart2").getContext("2d");
+                    window.myLine = new Chart(chart2).Line(lineChartDataGurarAL6, {
+                        responsive: true,
+                        scaleLineColor: "rgba(0,0,0,.2)",
+                        scaleGridLineColor: "rgba(0,0,0,.05)",
+                        scaleFontColor: "#c5c7cc"
+                    });
+                }
+    </script>
+
         </div>
 </body>
 </html>

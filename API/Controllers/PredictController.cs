@@ -1,33 +1,40 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.ML;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Web.Http.Cors;
 using API.DataModels;
+using Microsoft.ML;
+using WebApi.DataModels;
 
 
-[Route("api/[controller]")]
-[ApiController]
-public class PredictController : ControllerBase
-{
+namespace API.Controllers {
 
-    private readonly PredictionEnginePool<PrevalenceData, MalariaPrevalencePrediction> _predictionEnginePool;
-
-    public PredictController(PredictionEnginePool<PrevalenceData, MalariaPrevalencePrediction> predictionEnginePool)
+    //enabling Cross origin resource sharing
+    //this part is not implemented fully.
+    //or it does work...problem is its not reflecting.
+    [Route("api/[controller]")]
+    [ApiController]
+    [EnableCors("http://localhost:51014", "*", "*")]
+    public class PredictController : ControllerBase
     {
-        _predictionEnginePool = predictionEnginePool;
-    }
+        public PredictionEngine<Malaria, MalariaPrevalencePrediction> _PredictionEngine;
 
-    [HttpPost]
-    public ActionResult<float> Post([FromBody] PrevalenceData input)
-    {
-        if (!ModelState.IsValid)
+        public PredictController(PredictionEngine<Malaria,MalariaPrevalencePrediction> predictionEngine)
         {
-            return BadRequest();
+
+            _PredictionEngine = predictionEngine;
+            //_PredictionEngine = PredictionEngine<Malaria, MalariaPrevalencePrediction>, new ("@./MLModel/Model.zip").Result;
         }
 
-        MalariaPrevalencePrediction prediction = _predictionEnginePool.Predict(input);
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        float prevalence = Convert.ToInt64(prediction.Prediction);
+        [HttpPost]
+        //return the result from the prediction pool
+        //needs tor return an integer or floating point value.
+        //current action posts from a model deployed over the asp.net API.
+        public IActionResult Predict();
 
-        return Ok(prevalence);
     }
 }

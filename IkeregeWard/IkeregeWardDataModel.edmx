@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="malariaMigoriCountyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="malariaMigoriCountyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="IkeregeWard">
           <Key>
             <PropertyRef Name="months" />
@@ -17,12 +17,12 @@
           <Property Name="al24" Type="int" />
           <Property Name="wardId" Type="varchar" MaxLength="50" />
           <Property Name="months" Type="date" Nullable="false" />
+          <Property Name="prevalence" Type="int" />
         </EntityType>
         <EntityContainer Name="malariaMigoriCountyModelStoreContainer">
           <EntitySet Name="IkeregeWard" EntityType="Self.IkeregeWard" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="malariaMigoriCountyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -38,6 +38,7 @@
           <Property Name="al24" Type="Int32" />
           <Property Name="wardId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="months" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="prevalence" Type="Int32" />
         </EntityType>
         <EntityContainer Name="malariaMigoriCountyDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IkeregeWards" EntityType="Self.IkeregeWard" />
@@ -51,6 +52,7 @@
           <EntitySetMapping Name="IkeregeWards">
             <EntityTypeMapping TypeName="malariaMigoriCountyModel.IkeregeWard">
               <MappingFragment StoreEntitySet="IkeregeWard">
+                <ScalarProperty Name="prevalence" ColumnName="prevalence" />
                 <ScalarProperty Name="rainfall" ColumnName="rainfall" />
                 <ScalarProperty Name="temperature" ColumnName="temperature" />
                 <ScalarProperty Name="al6" ColumnName="al6" />
