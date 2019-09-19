@@ -40,7 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>7.2</LangVersion>
     <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
     <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
     <PublishDatabases>false</PublishDatabases>
@@ -57,6 +57,7 @@
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -980,6 +981,10 @@
     <ProjectReference Include="..\..\..\New folder\WebApi\WebApi\WebApi.csproj">
       <Project>{7b9eee33-7494-4e11-a0d3-9dc17a5b2497}</Project>
       <Name>WebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\API.csproj">
+      <Project>{5550DB15-99D1-4592-8A43-6B56CAD35366}</Project>
+      <Name>API</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

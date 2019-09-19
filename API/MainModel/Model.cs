@@ -4,7 +4,6 @@ using Microsoft.ML;
 using Microsoft.ML.Data;
 using System.IO;
 using API.DataModels;
-using WebApi.DataModels;
 
 namespace API.MainModel
 {
@@ -19,21 +18,21 @@ namespace API.MainModel
             static readonly string _trainDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-train2.csv");
             //static readonly string _testDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-trialtest2.csv");
             static readonly string _modelPath = Path.Combine(Environment.CurrentDirectory, "Data", "Model.zip");
-            static TextLoader textLoader;
+            static TextLoader _textLoader;
 
-            private static void Main(string[] args)
-            {
-                Console.WriteLine(Environment.CurrentDirectory);
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Environment.CurrentDirectory);
 
-                //When building a model with ML.NET you start by creating an ML Context. 
-                //This is comparable conceptually to using DbContext in Entity Framework. 
-                //The environment provides a context for the machine learning job that can be used for 
-                //1. exception tracking and 2. logging.
+            //When building a model with ML.NET you start by creating an ML Context. 
+            //This is comparable conceptually to using DbContext in Entity Framework. 
+            //The environment provides a context for the machine learning job that can be used for 
+            //1. exception tracking and 2. logging.
 
-                MLContext mlContext = new MLContext(seed: 0);
-              var model = Train(mlContext, _trainDataPath);
-                TestSinglePrediction(mlContext, model);
-            }
+            MLContext mlContext = new MLContext(seed: 0);
+            var model = Train(mlContext, _trainDataPath);
+            TestSinglePrediction(mlContext, model);
+        }
 
 
         //Train methods executes the following
@@ -48,7 +47,7 @@ namespace API.MainModel
 
                 //IDataView dataView = mlContext.Data.LoadFromTextFile<Malaria>(DataPath, hasHeader: true, separatorChar: ',');
 
-                IDataView dataView = textLoader.Load(DataPath);
+                IDataView dataView = _textLoader.Load(DataPath);
                 //pipeline stores label
                 var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "Label", inputColumnName: "prevalenceUne")
 

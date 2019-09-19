@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 
 //the service runs with system dependencies that enable the prediction controller to do its thing
 //
-namespace WebApi
+namespace API
 {
 
     //the main namespace is what holds the builder to the web hosting service.

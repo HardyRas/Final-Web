@@ -1,0 +1,5 @@
+﻿You need to add a controller that will :
+
+		Import the model.
+		Feed it with user inout from the text fields
+		Return a prediction value reagrding the same.

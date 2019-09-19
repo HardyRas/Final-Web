@@ -29,7 +29,7 @@ namespace Final_Web
             if (dt.Rows.Count > 0)
             {
                 Session["username"] = userid;
-                Response.Redirect("ikeregeWardMain.aspx");
+                Response.Redirect("selectionMap.aspx");
             }
             else
             {

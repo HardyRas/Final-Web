@@ -1,13 +1,12 @@
-﻿using API.DataModels;
+﻿using WebApi.DataModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ML;
-using WebApi.DataModels;
 
-namespace WebApi
+namespace API
 {
     public class Startup
     {
@@ -26,8 +25,7 @@ namespace WebApi
             //..which creates an ObjectPool of PredictionEngine objects for application use
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddPredictionEnginePool<Malaria, MalariaPrevalencePrediction>()
-                .FromFile("MLModel/Model.zip");
+            services.AddPredictionEnginePool<Malaria, MalariaPrevalencePrediction>() .FromFile("MLModel/Model.zip");
         }
 
         //This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

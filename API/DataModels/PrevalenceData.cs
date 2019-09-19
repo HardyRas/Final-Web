@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace WebApi.DataModels
+namespace API.DataModels
 {
     public class Malaria
     {
