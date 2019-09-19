@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\PredictController.cs" />
+    <Compile Remove="Controllers\ValuesController.cs" />
     <Compile Remove="MainModel\Model.cs" />
     <Compile Remove="trainMalaria.cs" />
   </ItemGroup>

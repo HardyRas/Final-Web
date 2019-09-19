@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetambwegaWardDataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{5550DB15-99D1-4592-8A43-6B56CAD35366}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLIAPP1", "CLIAPP1\CLIAPP1.csproj", "{93D71C64-B7EA-4299-8CC6-C73850A0A030}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{5550DB15-99D1-4592-8A43-6B56CAD35366}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5550DB15-99D1-4592-8A43-6B56CAD35366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5550DB15-99D1-4592-8A43-6B56CAD35366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D71C64-B7EA-4299-8CC6-C73850A0A030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D71C64-B7EA-4299-8CC6-C73850A0A030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D71C64-B7EA-4299-8CC6-C73850A0A030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D71C64-B7EA-4299-8CC6-C73850A0A030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

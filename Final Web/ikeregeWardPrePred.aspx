@@ -69,7 +69,7 @@
                                 <div class="col-8">
                                     <div class="card-body">
 
-                                              <form  id="PrePred" runat ="server" method="post" action="http://localhost:51218/api/Predict/Post">   
+                                              <form  id="PrePred" runat ="server" method="post">   
                                                 <h3>PREVALENCE PREDICTION</h3>
                                                   <hr class="my-4" />
                                                 <h6>Enter respective details and run prediction</h6>
@@ -121,7 +121,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                          <asp:Button Text ="Run Prediction" runat="server" id ="predictPrevalence" OnClick="PredictPrevalence_Click"/>
+                                                                          <asp:Button Text ="Start Prediction" runat="server" id ="predictPrevalence" OnClick="predictPrevalence_Click1"/>
                                                                     </div>    
                                                             </div>
                                                     </div>
@@ -133,7 +133,7 @@
                                                     <div class="col-md-12">
                                                       <div class="form-group">
                                                         <label class="form-control-label" for="input-address">Predicted Prevalence Value</label>
-                                                        <input id="input-address" class="form-control form-control-alternative"/>
+                                                        <input readonly="true" id="input-address" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
