@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ikeregeWardNewEntries.aspx.cs" Inherits="Final_Web.ikeregeWardNewEntries" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetambwegaWardNewEntries.aspx.cs" Inherits="Final_Web.GetambwegaWardNewEntries" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="HeadIkerege" runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Ikerege Ward</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Getambwega Ward</title>
+    <link href="css/getambwega.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datepicker3.css" rel="stylesheet"/>
     <link href="css/styles.css" rel="stylesheet"/>
@@ -58,12 +58,12 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
             </div>
         </form>
         <ul class="nav menu">
-            <li><a href="ikeregeWardMain.aspx"><em class="fa fa-dashboard">&nbsp;</em> Prevalence Report</a></li>
-            <li ><a href="ikeregeWardCommodities.aspx"><em class="fa fa-calendar">&nbsp;</em> Commodities Report</a></li>
-            <li ><a href="ikeregeWardFeatureForcast.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
-            <li><a href="ikeregeWardPrePred.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
-            <li class="active"><a href="ikeregeWardNewEntries.aspx"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
-            <li ><a href="ikeregeWardAnalysisCharts.aspx"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
+            <li><a href="GetambwegaWardMain.aspx"><em class="fa fa-dashboard">&nbsp;</em> Prevalence Report</a></li>
+            <li ><a href="GetambwegaWardCommodities.aspx"><em class="fa fa-calendar">&nbsp;</em> Commodities Report</a></li>
+            <li ><a href="GetambwegaWardFeatureForcast.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
+            <li><a href="GetambwegaWardPrePred.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
+            <li class="active"><a href="GetambwegaWardNewEntries.aspx"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
+            <li ><a href="GetambwegaWardAnalysisCharts.aspx"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
             <li><a href="Login.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!--/.sidebar-->

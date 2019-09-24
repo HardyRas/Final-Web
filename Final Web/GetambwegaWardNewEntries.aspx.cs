@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Final_Web
 {
-    public partial class ikeregeWardNewEntries : System.Web.UI.Page
+    public partial class GetambwegaWardNewEntries : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

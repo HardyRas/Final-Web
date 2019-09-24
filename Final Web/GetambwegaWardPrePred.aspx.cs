@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Final_Web
 {
-    public partial class ikeregeWardPrePred : System.Web.UI.Page
+    public partial class GetambwegaWardPrePred : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

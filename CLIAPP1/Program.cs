@@ -5,6 +5,7 @@ using Microsoft.ML.Data;
 using System.IO;
 using Microsoft.Data.DataView;
 
+
 namespace CLIAPP1
 {
         //Defining data and model paths
@@ -15,13 +16,15 @@ namespace CLIAPP1
             // three fields to hold the paths to the files with data sets and the file to save
             //the model, and a global variable for the TextLoader
 
-            static readonly string _trainDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-train2.csv");
-            //static readonly string _testDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-trialtest2.csv");
-            static readonly string _modelPath = Path.Combine(Environment.CurrentDirectory, "Data", "Model.zip");
-            static TextLoader _textLoader;
-
-            static void Main(string[] args)
+            static string trainDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-train2.csv");
+           //static string testDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "malaria-trialtest2.csv");
+            static  string modelPath = Path.Combine(Environment.CurrentDirectory, "Data", "Model.zip");
+            static TextLoader textLoader;
+        static void Main(string[] args)
             {
+                Console.WriteLine("****************************************************");
+                Console.WriteLine("This process is happening locally in the directory mentioned:");
+                Console.WriteLine("****************************************************");
                 Console.WriteLine(Environment.CurrentDirectory);
 
                 //When building a model with ML.NET you start by creating an ML Context. 
@@ -31,7 +34,7 @@ namespace CLIAPP1
 
                 MLContext mlContext = new MLContext(seed: 0);
 
-                _textLoader = mlContext.Data.CreateTextLoader
+                textLoader = mlContext.Data.CreateTextLoader
                       (new TextLoader.Arguments()
                       {
                           Separators = new[] { ',' },
@@ -49,26 +52,25 @@ namespace CLIAPP1
                       }
                       );
 
-                /*var model = */
-                Train(mlContext, _trainDataPath);
+                var model = Train(mlContext, trainDataPath);
                 TestSinglePrediction(mlContext);
             Console.ReadLine();
             }
 
 
-            //Train methods executes the following
-            //..Loads the data.
-            //..Extracts and transforms the data.
-            //..Trains the model.
-            //..Saves the model as .zip file.
-            //..Returns the model.
-            public static ITransformer Train(MLContext mlContext, string DataPath)
+        //Train methods executes the following
+        //..Loads the data.
+        //..Extracts and transforms the data.
+        //..Trains the model.
+        //..Saves the model as .zip file.
+        //..Returns the model.
+        public static ITransformer Train(MLContext mlContext, string DataPath)
             {
 
 
                 //IDataView dataView = mlContext.Data.LoadFromTextFile<Malaria>(DataPath, hasHeader: true, separatorChar: ',');
 
-                IDataView dataView = _textLoader.Read(DataPath);
+                IDataView dataView = textLoader.Read(DataPath);
                 //pipeline stores label
                 var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "Label", inputColumnName: "prevalenceUne")
 
@@ -81,9 +83,11 @@ namespace CLIAPP1
                             //refer to your fast tree info.txt
                             .Append(mlContext.Regression.Trainers.FastTree());
 
-                Console.WriteLine("=============== Create and Train the Model ===============");
+                Console.WriteLine("\t\t\t=============== The model is being built....  ===============");
+                Console.WriteLine("\t\t\t=============== Training has begun...  ===============");
+                Console.WriteLine("\t\t\t=============== Please wait...  ===============");
                 var model = pipeline.Fit(dataView);
-                Console.WriteLine("=============== *****End of training ******===============");
+                Console.WriteLine("\t\t\t=============== *****End of training ******===============");
 
                 Console.WriteLine();
 
@@ -94,8 +98,10 @@ namespace CLIAPP1
             }
 
 
-            private static void TestSinglePrediction(MLContext mlContext)
+        private static void TestSinglePrediction(MLContext mlContext)
             {
+
+            int Temp, Rain, ALsix, ALtwelve, ALeighteen, ALtwennyfour = 0;
 
                 //Creates a single comment of test data.
                 //Predicts fare amount based on test data.
@@ -105,7 +111,7 @@ namespace CLIAPP1
                 //Expensive
                 ITransformer loadedModel;
 
-                using (var stream = new FileStream(_modelPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var stream = new FileStream(modelPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
 
                 {
 
@@ -116,22 +122,40 @@ namespace CLIAPP1
                 //expensive
                 var predictionFunction = loadedModel.CreatePredictionEngine<Malaria, MalariaPrevalencePrediction>(mlContext);
 
-                //instance of a malaria data
-                //to get predictions from
+            //instance of a malaria data
+            //to get predictions from
 
-                //THIS IS THE VARIABILITY.
-                //exists in all wards
-                var MalariaExample = new Malaria()
+            //THIS IS THE VARIABILITY.
+            //exists in all wards
+            Console.WriteLine("\n\t\t\t****************************************");
+            Console.WriteLine("\t\t\tUSER INPUT FROM FEATURE FORECAST:");
+            Console.WriteLine("\t\t\t****************************************");
+
+            Console.WriteLine("\t\t\tWhats the temperature value from the feature forecast:");
+            Temp = Convert.ToInt32( Console.ReadLine());
+            Console.WriteLine("\t\t\tWhats the Rainfall value from the feature forecast:");
+            Rain = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\t\t\tWhats the AL6 commodity dispensed:");
+            ALsix = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\t\t\tWhats the AL12 commodity dispensed:");
+            ALtwelve = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\t\t\tWhats the AL18 commodity dispensed:");
+            ALeighteen = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\t\t\tWhats the AL24 commodity dispensed:");
+            ALtwennyfour = Convert.ToInt32(Console.ReadLine());
+
+
+            var MalariaExample = new Malaria()
                 {
 
                     // to receive user input for max accuracy
                     //obtained from the time series anlaysis.
-                    temperature = 21,
-                    rainfall = 242,
-                    al6 = 290,
-                    al12 = 100,
-                    al18 = 13,
-                    al24 = 1,
+                    temperature = Temp,
+                    rainfall = Rain,
+                    al6 = ALsix,
+                    al12 = ALtwelve,
+                    al18 = ALeighteen,
+                    al24 = ALtwennyfour,
 
                 };
 
@@ -146,10 +170,10 @@ namespace CLIAPP1
             //this happens after training.
             private static void SaveModelAsFile(MLContext mlContext, ITransformer model)
             {
-                using (var filestream = new FileStream(_modelPath, FileMode.Create, FileAccess.Write, FileShare.Write))
+                using (var filestream = new FileStream(modelPath, FileMode.Create, FileAccess.Write, FileShare.Write))
                     mlContext.Model.Save(model, filestream);
 
-                Console.WriteLine("The model has been saved in: \n{0}", _modelPath);
+                Console.WriteLine("\n\t\t\tThe model has been saved in: \n\t\t\t{0}", modelPath);
             }
         }
 }

@@ -10,33 +10,33 @@
 namespace Final_Web {
     
     
-    public partial class ikeregeWardNewEntries {
+    public partial class GetambwegaWardFeatureForcast {
         
         /// <summary>
-        /// HeadIkerege control.
+        /// buttons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead HeadIkerege;
+        protected global::System.Web.UI.HtmlControls.HtmlForm buttons;
         
         /// <summary>
-        /// dataEntry control.
+        /// Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm dataEntry;
+        protected global::System.Web.UI.WebControls.Button Button;
         
         /// <summary>
-        /// AddEntry control.
+        /// showPopUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddEntry;
+        protected global::System.Web.UI.WebControls.Button showPopUp;
     }
 }

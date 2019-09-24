@@ -328,6 +328,7 @@
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\getambwega.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\brands.min.css" />
     <Content Include="css\dataTables.bootstrap.css" />
@@ -353,9 +354,16 @@
     <Content Include="css\styles.css" />
     <Content Include="css\svg-with-js.min.css" />
     <Content Include="css\v4-shims.min.css" />
+    <Content Include="GetambwegaWardAnalysisCharts.aspx" />
+    <Content Include="GetambwegaWardCommodities.aspx" />
+    <Content Include="GetambwegaWardFeatureForcast.aspx" />
+    <Content Include="GetambwegaWardMain.aspx" />
+    <Content Include="GetambwegaWardNewEntries.aspx" />
+    <Content Include="GetambwegaWardPrePred.aspx" />
     <Content Include="ikeregeWardCommodities.aspx" />
     <Content Include="ikeregeWardFeatureForcast.aspx" />
     <Content Include="ikeregeWardAnalysisCharts.aspx" />
+    <Content Include="MigoriCountyPick.aspx" />
     <Content Include="ikeregeWardMain.aspx" />
     <Content Include="ikeregeWardNewEntries.aspx" />
     <Content Include="ikeregeWardPrePred.aspx" />
@@ -725,6 +733,48 @@
     <Compile Include="Error_404.aspx.designer.cs">
       <DependentUpon>Error_404.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GetambwegaWardAnalysisCharts.aspx.cs">
+      <DependentUpon>GetambwegaWardAnalysisCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardAnalysisCharts.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardAnalysisCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetambwegaWardCommodities.aspx.cs">
+      <DependentUpon>GetambwegaWardCommodities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardCommodities.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardCommodities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetambwegaWardFeatureForcast.aspx.cs">
+      <DependentUpon>GetambwegaWardFeatureForcast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardFeatureForcast.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardFeatureForcast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetambwegaWardMain.aspx.cs">
+      <DependentUpon>GetambwegaWardMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardMain.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetambwegaWardNewEntries.aspx.cs">
+      <DependentUpon>GetambwegaWardNewEntries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardNewEntries.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardNewEntries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetambwegaWardPrePred.aspx.cs">
+      <DependentUpon>GetambwegaWardPrePred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetambwegaWardPrePred.aspx.designer.cs">
+      <DependentUpon>GetambwegaWardPrePred.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ikeregeWardCommodities.aspx.cs">
       <DependentUpon>ikeregeWardCommodities.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -745,6 +795,13 @@
     </Compile>
     <Compile Include="ikeregeWardAnalysisCharts.aspx.designer.cs">
       <DependentUpon>ikeregeWardAnalysisCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MigoriCountyPick.aspx.cs">
+      <DependentUpon>MigoriCountyPick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MigoriCountyPick.aspx.designer.cs">
+      <DependentUpon>MigoriCountyPick.aspx</DependentUpon>
     </Compile>
     <Compile Include="ikeregeWardMain.aspx.cs">
       <DependentUpon>ikeregeWardMain.aspx</DependentUpon>
@@ -982,13 +1039,12 @@
       <Project>{7b9eee33-7494-4e11-a0d3-9dc17a5b2497}</Project>
       <Name>WebApi</Name>
     </ProjectReference>
-    <ProjectReference Include="..\API\API.csproj">
-      <Project>{5550DB15-99D1-4592-8A43-6B56CAD35366}</Project>
-      <Name>API</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Getambwega\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

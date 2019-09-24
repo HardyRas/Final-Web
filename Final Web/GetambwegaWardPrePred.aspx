@@ -1,28 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ikeregeWardNewEntries.aspx.cs" Inherits="Final_Web.ikeregeWardNewEntries" %>
+﻿<%@Page Language="C#" AutoEventWireup="true" CodeBehind="GetambwegaWardPrePred.aspx.cs" Inherits="Final_Web.GetambwegaWardPrePred" %>
+
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="HeadIkerege" runat="server">
+<head runat="server">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Ikerege Ward</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Getambwega Ward</title>
+    <link href="css/getambwega.css" rel="stylesheet"/>
     <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/datepicker3.css" rel="stylesheet"/>
     <link href="css/styles.css" rel="stylesheet"/>
+
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
-
-    <%-- This script is my everything --%><%--Call the ASP.Net Web API Controller method from the .aspx page using JSON.
- 
-Now we need to call the Web API controller method from the .aspx page.
-To do this we need to create a JSON method using jQuery as in the following,--%>
-
-    <script src="js/PostToDB.js" type="text/javascript"></script>
-    <script src="js/jquery-1.7.1.js" type="text/javascript"></script>   
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
-    
 </head>
 <body style="height: 525px">
 
@@ -58,12 +49,12 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
             </div>
         </form>
         <ul class="nav menu">
-            <li><a href="ikeregeWardMain.aspx"><em class="fa fa-dashboard">&nbsp;</em> Prevalence Report</a></li>
-            <li ><a href="ikeregeWardCommodities.aspx"><em class="fa fa-calendar">&nbsp;</em> Commodities Report</a></li>
-            <li ><a href="ikeregeWardFeatureForcast.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
-            <li><a href="ikeregeWardPrePred.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
-            <li class="active"><a href="ikeregeWardNewEntries.aspx"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
-            <li ><a href="ikeregeWardAnalysisCharts.aspx"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
+            <li><a href="GetambwegaWardMain.aspx"><em class="fa fa-dashboard">&nbsp;</em> Prevalence Report</a></li>
+            <li ><a href="GetambwegaWardCommodities.aspx"><em class="fa fa-calendar">&nbsp;</em> Commodities Report</a></li>
+            <li ><a href="GetambwegaWardFeatureForcast.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Feature Forecast</a></li>
+            <li class="active"><a href="GetambwegaWardPrePred.aspx"><em class="fa fa-clone">&nbsp;</em> Prevalence Prediction</a></li>
+            <li><a href="GetambwegaWardNewEntries.aspx"><em class="fa fa-clone">&nbsp;</em> New Entries</a></li>
+            <li><a href="GetambwegaWardAnalysisCharts.aspx"><em class="fa-fa-chart">&nbsp;</em>Analysis Charts</a></li>
             <li><a href="Login.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div><!--/.sidebar-->
@@ -78,84 +69,76 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                                 <div class="col-8">
                                     <div class="card-body">
 
-                                        <%-- I will use the name of this form --%>
-                                              <form id="dataEntry" runat ="server">
-                                                <h3>DATA ENTRY</h3>
-                                                   <hr class="my-4" />
-                                                  <h6>New Features</h6>
-                                                                                                     <hr class="my-4" />
+                                              <form  id="PrePred" runat ="server" method="post">   
+                                                <h3>PREVALENCE PREDICTION</h3>
+                                                  <hr class="my-4" />
+                                                <h6>Enter respective details and run prediction</h6>
+                                                                                                    <hr class="my-4" />
                                                 <div class="pl-lg-4">
-
-                                                 <div class="row">
-                                                    <div class="col-lg-6">
-                                                      <div class="form-group">
-                                                        <label>Month</label>
-                                                        <input type="date" id="inputMonths"  class="form-control form-control-alternative" />
-                                                      </div>
-                                                    </div>
-                                                <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                           <label>Rainfall</label>
-                                                            <input type="number" id="inputRain"  class="form-control form-control-alternative"/>
-                                                        </div>
-                                                    </div>
-                                                 </div>
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>Temperature</label>
-                                                        <input type="number" id="inputTemperature"  class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >Rainfall</label>
+                                                        <input type="text" id="rainfall" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL6s</label>
-                                                        <input type="number" id="inputAL6" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >Temperature</label>
+                                                        <input type="email" id="temperature"  runat="server" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                   <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label">AL12s</label>
-                                                        <input type="number" id="inputAL12" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL6s</label>
+                                                        <input type="text" id="al6" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL18s</label>
-                                                        <input type="number" id="inputAL18"  class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL12s</label>
+                                                        <input type="text" id="al12" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
                                                      <div class="row">
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>AL24s</label>
-                                                        <input type="number" id="inputAL24"  class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL18s</label>
+                                                        <input type="text" id="al18" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                       <div class="form-group">
-                                                        <label>Ward Id</label>
-                                                        <input type="text" id="inputWardId" class="form-control form-control-alternative"/>
+                                                        <label class="form-control-label" >AL24s</label>
+                                                        <input type="text" id="al24" class="form-control form-control-alternative"/>
                                                       </div>
                                                     </div>
                                                   </div>
-
-                                                </div>
-                                                <hr class="my-4" />
-                                                   <%-- Button sasa --%>
+                                                    <%-- Button sasa --%>
                                                     <div class="row">
                                                         <div class="col-lg-1">
                                                                     <div class="col-4 text-right">
-                                                                        <asp:Button ID="AddEntry" runat="server" Height="29px" OnClick="AddEntry_Click" Text="Add Entry" />
+                                                                          <asp:Button Text ="Start Prediction" runat="server" id ="predictPrevalence" OnClick="predictPrevalence_Click1"/>
                                                                     </div>    
                                                             </div>
                                                     </div>
+                                                </div>
+                                                <hr class="my-4" />
+                                                <!-- Address -->
+                                                <div class="pl-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-md-12">
+                                                      <div class="form-group">
+                                                        <label class="form-control-label" for="input-address">Predicted Prevalence Value</label>
+                                                        <input readonly="true" id="input-address" class="form-control form-control-alternative"/>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                               </div>
                                               </form>
-                                                
-                                        <%-- End of button --%>
                                         </div>
                                     </div>
                                 </div>
@@ -165,6 +148,5 @@ To do this we need to create a JSON method using jQuery as in the following,--%>
                 </div>
             </div>
         </div>
-
 </body>
 </html>

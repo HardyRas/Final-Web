@@ -10,7 +10,7 @@
 namespace Final_Web {
     
     
-    public partial class ikeregeWardNewEntries {
+    public partial class GetambwegaWardNewEntries {
         
         /// <summary>
         /// HeadIkerege control.
